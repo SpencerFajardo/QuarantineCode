@@ -6,4 +6,5 @@ int main(int argv, char** argc){
   std::cout << "\n";
   std::cout << "Hello, Spencer!" << "\n"; 
   qc.days_spent_in_quarantine();
+  return 0;
 }
