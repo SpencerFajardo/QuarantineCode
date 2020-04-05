@@ -25,34 +25,46 @@ void QC::days_spent_in_quarantine(){
   time(&current_time);
 
   // print date from time object, also prove that we can extract things
-  std::string test = ctime(&current_time);
-  std::cout << "\n";
-  std::string test2 = test.substr(8,2);
+  std::string day_extract_string = ctime(&current_time);
+  std::string day_string = day_extract_string.substr(8,2);
+  std::string month_string = day_extract_string.substr(4,3);
 
   // this section shows how to convert string to int
-  std::stringstream geek (test2);
+  std::stringstream geek (day_string);
   int x = 0;
   geek >> x; // I added this comment really easily using vim!
 
   // here we need to add a switch statement to tally up the number of days
   // if we are considering the number of days in the months that have passed
   // since March 14th
-  switch (x)
+  if(strcmp(month_string.c_str(),"Apr") == 0)
   {
-    case 4: x = x + 18;
-            break;
-    case 5: x = x + 48;
-            break;
-    case 6: x = x + 79;
-            break;
-    case 7: x = x + 109;
-            break;
-    case 8: x = x + 140;
-            break;
-    case 9: x = x + 171;
-            break;
-    case 10: x = x + 201;
+     x = x + 18;
   }
-  
+  else if(strcmp(month_string.c_str(),"May") == 0)
+  {
+     x = x + 48;
+  }
+  else if(strcmp(month_string.c_str(),"Jun") == 0)
+  {
+     x = x + 79;
+  }
+  else if(strcmp(month_string.c_str(),"July") == 0)
+  {
+     x = x + 109;
+  }
+  else if(strcmp(month_string.c_str(),"Aug") == 0)
+  {
+     x = x + 140;
+  }
+  else if(strcmp(month_string.c_str(),"Sep") == 0)
+  {
+     x = x + 171;
+  }
+  else if(strcmp(month_string.c_str(),"Oct") == 0)
+  {
+     x = x + 201;
+  }
+
   std::cout << "Days in quarantine: " << x << "\n";
 }
