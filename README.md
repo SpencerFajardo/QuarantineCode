@@ -9,4 +9,4 @@ information about the coronavirus from various websites. A shell script is neede
 the two parts together.
 
 To run the files together, type the following into your terminal:
-./shell.sh
+./qcrunner.sh
