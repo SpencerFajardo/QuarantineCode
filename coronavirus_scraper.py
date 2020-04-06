@@ -47,7 +47,9 @@ def get_infection_information():
    total = 0
    for case in cases:
       total = total + case
-   print("Coronavirus Case World Total: " + str(total))
+   print("Coronavirus Cases World Total: " + str(total))
+   print()
+   print("----------------")
 
 # This method processes the strings from the table, and prepares
 # them to be just numbers
