@@ -3,7 +3,8 @@
 #include <iostream>
 #include <sstream>
 
-// This method prints the current date at the time of calling it.
+// This method creates a string with the current date
+// returns return_string with the date
 std::string QC::todays_date(){
   // time object
   time_t current_time;
