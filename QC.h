@@ -2,6 +2,6 @@
 class QC {
 
 public:
-  void todays_date();
-  void days_spent_in_quarantine();
+  std::string todays_date();
+  std::string days_spent_in_quarantine();
 };

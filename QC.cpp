@@ -4,22 +4,22 @@
 #include <sstream>
 
 // This method prints the current date at the time of calling it.
-void QC::todays_date(){
+std::string QC::todays_date(){
   // time object
   time_t current_time;
   time(&current_time);
 
-  // print date from time object 
-  std::string test = ctime(&current_time);
-  std::cout << "\n";
-  std::cout << "Today's Date: " << test << "\n";
+  // return the date_string to the main program to print.
+  std::string date_string = ctime(&current_time);
+  std::string return_string = "Today's Date: " + date_string;
+  return return_string;
 }
 
 // This method will tell you the number of days you have spent in quarantine.
 // Some assumptions:
 // 1. Quarantine started Martch 14th, 2020
 // 2. The tally is only correct until November 30th, 2020.
-void QC::days_spent_in_quarantine(){
+std::string QC::days_spent_in_quarantine(){
    // time object
   time_t current_time;
   time(&current_time);
@@ -65,6 +65,8 @@ void QC::days_spent_in_quarantine(){
   {
      x = x + 201;
   }
+  
+  std::string return_string = "Days in quarantine: " + std::to_string(x);
+  return return_string;
 
-  std::cout << "Days in quarantine: " << x << "\n";
 }

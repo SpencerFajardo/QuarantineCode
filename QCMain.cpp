@@ -6,11 +6,13 @@ int main(int argv, char** argc){
   QC qc;
   std::cout << "----------------" << "\n";
   std::cout << "\n";
-  std::cout << "Hello, Spencer!" << "\n"; 
+  std::cout << "Hello, Spencer!" << std::endl; 
   
   // use my methods
-  qc.todays_date();
-  qc.days_spent_in_quarantine();
-  std::cout << "\n";
+  std::cout << std::endl;
+  std::string date_string = qc.todays_date();
+  std::cout << date_string << std::endl;
+  std::string days_string = qc.days_spent_in_quarantine();
+  std::cout << days_string << std::endl;
   return 0;
 }
