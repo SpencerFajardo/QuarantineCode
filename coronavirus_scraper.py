@@ -25,9 +25,15 @@ def get_infection_information():
         
         
             if len(cells) > 1:
-                case = cells[0]
-                print(process_num(case.text.strip()))
-                cases.append(case)
+               case = cells[0]
+               try:
+                  cases.append(process_num(case.text.strip()))
+               except ValueError:
+                  break
+   total = 0
+   for case in cases:
+      total = total + case
+   print("Coronavirus Case World Total: " + str(total))
 
 
 def process_num(num):
