@@ -71,3 +71,21 @@ std::string QC::days_spent_in_quarantine(){
   return return_string;
 
 }
+
+std::string QC::make_file_title()
+{
+  time_t current_time;
+  time(&current_time);
+
+  // print date from time object, also prove that we can extract things
+  std::string day_extract_string = ctime(&current_time);
+  std::string day_string = day_extract_string.substr(8,2);
+  std::string month_string = day_extract_string.substr(4,3);
+
+  std::stringstream geek (day_string);
+  int day_int = 0;
+  geek >> day_int;
+
+  std::string return_string = month_string + std::to_string(day_int);
+  return return_string;
+}
