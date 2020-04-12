@@ -72,6 +72,8 @@ std::string QC::days_spent_in_quarantine(){
 
 }
 
+// make_file_title uses the current date to make a name for
+// the file qc will write to, using the format month_day.txt.
 std::string QC::make_file_title()
 {
   time_t current_time;
@@ -90,6 +92,8 @@ std::string QC::make_file_title()
   return return_string;
 }
 
+// write_file takes the same information thats output by the main method,
+// and puts the text into a file.
 void QC::write_file()
 {
    // file write info found here : https://stackoverflow.com/questions/347949/how-to-convert-a-stdstring-to-const-char-or-char
