@@ -54,6 +54,14 @@ def get_infection_information():
    print("----------------")
    
    # print to file as well
+   write_file(total) 
+
+# Writes information to a file.
+# The file is initially started in the C++ part
+# of this project, so this method first
+# finds the only (supposedly) .txt file in the current
+# directory and appends the case count to the file.
+def write_file(total):
    all_files = os.listdir()
    txt_files = filter(lambda x: x[-4:] == ".txt", all_files)
    for i in txt_files:
@@ -66,7 +74,7 @@ def get_infection_information():
       f.write("\n")
       f.close()
 
- 
+
 # This method processes the strings from the table, and prepares
 # them to be just numbers
 def process_num(num):
