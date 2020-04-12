@@ -86,6 +86,40 @@ std::string QC::make_file_title()
   int day_int = 0;
   geek >> day_int;
 
-  std::string return_string = month_string + std::to_string(day_int);
+  std::string return_string = month_string + "_" + std::to_string(day_int) + ".txt";
   return return_string;
+}
+
+void QC::write_file()
+{
+   // file write info found here : https://stackoverflow.com/questions/347949/how-to-convert-a-stdstring-to-const-char-or-char
+  std::string file_name = make_file_title();
+  const char * file_name_2 = file_name.c_str();
+  FILE *f = fopen(file_name_2, "w");
+  if (f == NULL)
+  {
+    printf("Error opening file!\n");
+    exit(1);
+  }
+
+  //print some text 
+  const char *text = "----------------";
+  fprintf(f, "%s\n", text);
+  const char *text2 = "";
+  fprintf(f, "%s\n", text2);
+  const char *text3 = "Hello, Spencer!";
+  fprintf(f, "%s\n", text3);
+  
+  const char *text4 = "";
+  fprintf(f, "%s\n", text4);
+
+  std::string date_string = todays_date();
+  const char *text5 = date_string.c_str();
+  fprintf(f, "%s\n", text5);
+
+  std::string days_string = days_spent_in_quarantine();
+  const char *text6 = days_string.c_str();
+  fprintf(f, "%s\n", text6);
+
+  fclose(f);
 }

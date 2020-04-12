@@ -1,6 +1,7 @@
 from bs4 import BeautifulSoup
 import re
 import requests
+import os
 
 # This is the main method, that tells the scraper to run.
 def main():
@@ -51,7 +52,21 @@ def get_infection_information():
    print("Coronavirus Cases World Total: " + str(total))
    print()
    print("----------------")
+   
+   # print to file as well
+   all_files = os.listdir()
+   txt_files = filter(lambda x: x[-4:] == ".txt", all_files)
+   for i in txt_files:
+      f = open(i, "a")
+      f.write("\n")
+      f.write("Coronavirus Cases World Total: " + str(total))
+      f.write("\n")
+      f.write("\n")
+      f.write("----------------")
+      f.write("\n")
+      f.close()
 
+ 
 # This method processes the strings from the table, and prepares
 # them to be just numbers
 def process_num(num):
