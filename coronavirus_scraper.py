@@ -1,3 +1,11 @@
+"""
+coronavirus_scraper.py
+
+Reads data from wiki table and prints it to terminal. Also writes to a file.
+
+Author: Spencer
+"""
+
 from bs4 import BeautifulSoup
 import re
 import requests
