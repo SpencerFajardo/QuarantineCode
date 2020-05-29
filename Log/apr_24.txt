@@ -1,0 +1,11 @@
+----------------
+
+Hello, Spencer!
+
+Today's Date: Fri Apr 24 19:30:21 2020
+
+Days in quarantine: 42
+
+Coronavirus Cases World Total: 2790754.0
+
+----------------

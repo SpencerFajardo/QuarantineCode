@@ -8,4 +8,4 @@ QC.o: QC.cpp QC.h
 	g++ -c QC.cpp -I .
 
 clean:
-	rm *.o
+	rm *.o qc
