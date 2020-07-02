@@ -20,6 +20,9 @@ std::string QC::todays_date(){
 // Some assumptions:
 // 1. Quarantine started Martch 14th, 2020
 // 2. The tally is only correct until November 30th, 2020.
+// Edit: The count was incorrect on July 1, 2020. This was fixed on
+// the same day. I was checking for "July" on line 56, when it should
+// have been "Jul".
 std::string QC::days_spent_in_quarantine(){
    // time object
   time_t current_time;
@@ -50,7 +53,7 @@ std::string QC::days_spent_in_quarantine(){
   {
      x = x + 79;
   }
-  else if(strcmp(month_string.c_str(),"July") == 0)
+  else if(strcmp(month_string.c_str(),"Jul") == 0)
   {
      x = x + 109;
   }
